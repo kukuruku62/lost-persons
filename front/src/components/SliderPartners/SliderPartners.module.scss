@@ -1,0 +1,29 @@
+.container {
+  max-width: 1440px;
+  padding: 20px;
+  margin: auto;
+}
+
+.wrapperImg {
+  width: 100%;
+    height: 150px;
+    z-index: 0;
+
+  & > a {
+    position: relative;
+    width: 100%;
+    height: 100%;
+  
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 0;
+  }
+}
+
+.image {
+  object-fit: contain;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
