@@ -1,0 +1,376 @@
+.header {
+  width: 100%;
+  position: relative;
+
+  .news {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--news);
+
+    p {
+      padding: 5px 20px;
+      color: var(--white-1);
+      font-size: calc(13px + (22 - 16) * ((100vw - 350px) / (1440 - 350)));
+      line-height: normal;
+      font-weight: 700;
+      letter-spacing: 3px;
+
+      @media (max-width: 768px) {
+        padding: 5px 10px;
+        letter-spacing: 0;
+      }
+    }
+  }
+}
+
+.mainContainer {
+  width: 100%;
+  position: relative;
+
+  &:before {
+    content: "";
+    background-image: radial-gradient(circle, rgba(0, 0, 0, 0.6), rgba(15, 20, 11, 0.8));
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+  }
+
+  .backgroundImg {
+    object-fit: cover;
+    object-position: center 37%;
+    z-index: -2;
+  }
+
+  .content {
+    max-width: 1440px;
+    margin: auto;
+    height: 100%;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+
+    @media (max-width: 1024px) {
+      padding: 30px 20px;
+    }
+
+    @media (max-width: 568px) {
+      padding: 20px 10px 30px;
+    }
+  }
+
+  .top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    position: relative;
+
+    @media (max-width: 768px) {
+      flex-direction: column;
+      align-items: center;
+      row-gap: 20px;
+    }
+
+    .leftPart {
+      display: flex;
+      flex-direction: column;
+      row-gap: 20px;
+
+      .logoAndTitles {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        column-gap: 10px;
+
+        @media (max-width: 768px) {
+          flex-direction: column;
+          row-gap: 20px;
+          column-gap: 0;
+        }
+      }
+
+      .titlesBlock {
+        display: flex;
+        flex-direction: column;
+        row-gap: 5px;
+
+        @media (max-width: 568px) {
+          align-items: center;
+        }
+
+      // TITLE COMPONENT
+        .title {
+          color: var(--green-text-light);
+          font-size: calc(25px + 4 * (100vw - 340px) / 1100);
+          font-weight: 700;
+          line-height: 32px;
+
+          @media (max-width: 1024px) {
+            line-height: normal;
+          }
+
+          @media (max-width: 480px) {
+            font-size: calc(24px + 3 * (100vw - 340px) / 1100);
+          }
+        }
+
+        p {
+          color: var(--green-text-light);
+          font-size: calc(20px + 4 * (100vw - 340px) / 1100);
+          font-weight: 500;
+          line-height: normal;
+
+          @media (max-width: 480px) {
+            font-size: calc(18px + 3 * (100vw - 340px) / 1100);
+          }
+        }
+      }
+    }
+
+    .rightPart {
+      display: flex;
+      flex-direction: column;
+      row-gap: 15px;
+    }
+  }
+}
+
+.alertPerson {
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  justify-items: center;
+  color: var(--white-1);
+  width: 100%;
+  position: relative;
+
+  &:after {
+    content: "";
+    height: 5px;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: linear-gradient(180deg, rgba(59, 52, 43, 0.5) 0%, rgba(56, 68, 68, 0) 100%);
+    z-index: 10;
+  }
+
+  @media (max-width: 568px) {
+    background-color: rgb(235, 154, 47);
+  }
+
+  span {
+    @media (max-width: 568px) {
+      display: none;
+    }
+
+    &:nth-of-type(1) {
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(
+          90deg,
+          rgba(240, 165, 67, 0.7) 30%,
+          rgba(240, 165, 67, 0.85) 40%,
+          rgba(235, 154, 47, 1) 90%
+        ),
+        repeating-linear-gradient(-70deg, rgb(223, 220, 216) 3px 20px, rgba(224, 163, 84) 20px 4vw);
+
+      @media (max-width: 768px) {
+        background: linear-gradient(
+            90deg,
+            rgba(240, 165, 67, 0.7) 30%,
+            rgba(240, 165, 67, 0.85) 40%,
+            rgba(235, 154, 47, 1) 90%
+          ),
+          repeating-linear-gradient(-70deg, rgb(223, 220, 216) 3px 10px, rgba(224, 163, 84) 4px 3vw);
+      }
+    }
+
+    &:nth-of-type(2) {
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(
+          -90deg,
+          rgba(240, 165, 67, 0.7) 30%,
+          rgba(240, 165, 67, 0.85) 40%,
+          rgba(235, 154, 47, 1) 90%
+        ),
+        repeating-linear-gradient(-70deg, rgb(223, 220, 216) 3px 20px, rgba(224, 163, 84) 20px 4vw);
+
+      @media (max-width: 768px) {
+        background: linear-gradient(
+            -90deg,
+            rgba(240, 165, 67, 0.7) 30%,
+            rgba(240, 165, 67, 0.85) 40%,
+            rgba(235, 154, 47, 1) 90%
+          ),
+          repeating-linear-gradient(-70deg, rgb(223, 220, 216) 3px 10px, rgba(224, 163, 84) 4px 3vw);
+      }
+    }
+  }
+
+  p {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px 20px;
+    margin: auto;
+    font-size: calc(16px + (23 - 16) * ((100vw - 340px) / (1440 - 340)));
+    font-weight: 700;
+    line-height: 34px;
+    letter-spacing: 5px;
+    text-wrap: nowrap;
+    background-color: rgb(235, 154, 47);
+    height: 100%;
+
+    @media (max-width: 568px) {
+      padding: 0 10px;
+      line-height: normal;
+      letter-spacing: 3px;
+    }
+  }
+
+  // GREEN VARIANT
+
+  // span {
+  //   &:nth-of-type(1) {
+  //     width: 100%;
+  //     height: 100%;
+  //     background: linear-gradient(
+  //         90deg,
+  //         rgba(32, 119, 92, 0.5) 30%,
+  //         rgb(32, 119, 92, 0.7) 70%,
+  //         rgba(32, 119, 92, 1) 90%
+  //       ),
+  //       repeating-linear-gradient(
+  //         -70deg,
+  //         rgba(216, 232, 227, 0.966) 3px 20px,
+  //         rgba(22, 90, 68, 0.7) 20px 4vw
+  //       );
+  //   }
+
+  //   &:nth-of-type(2) {
+  //     width: 100%;
+  //     height: 100%;
+  //     background: linear-gradient(
+  //         -90deg,
+  //         rgba(32, 119, 92, 0.5) 30%,
+  //         rgb(32, 119, 92, 0.7) 70%,
+  //         rgba(32, 119, 92, 1) 90%
+  //       ),
+  //       repeating-linear-gradient(
+  //         -70deg,
+  //         rgba(216, 232, 227, 0.966) 3px 20px,
+  //         rgba(22, 90, 68, 0.7) 20px 4vw
+  //       );
+  //   }
+  // }
+
+  // p {
+  //   display: flex;
+  //   align-items: center;
+  //   justify-content: center;
+  //   font-size: 24px;
+  //   font-weight: 700;
+  //   line-height: 34px;
+  //   letter-spacing: 5px;
+  //   text-wrap: nowrap;
+  //   background-color: rgba(32, 119, 92);
+  //   height: 100%;
+  // }
+}
+
+// Contacts outer component
+
+.containerContacts {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  row-gap: 10px;
+
+  .socialBlock {
+    @media (max-width: 1100px) {
+      display: none;
+    }
+    svg {
+      color: var(--green-text-light);
+
+      @media (max-width: 780px) {
+        width: 20px;
+        height: 20px;
+      }
+    }
+  }
+
+  .containerMailPhone {
+    display: flex;
+    flex-direction: row;
+    column-gap: 20px;
+
+    @media (max-width: 1100px) {
+      flex-direction: column;
+      align-items: flex-end;
+      row-gap: 10px;
+      column-gap: 0;
+    }
+
+    @media (max-width: 768px) {
+      row-gap: 5px;
+      align-items: flex-start;
+    }
+
+    a {
+      color: var(--green-text-light);
+
+      @media (max-width: 780px) {
+        font-size: 20px;
+        line-height: normal;
+      }
+    }
+  }
+}
+
+// Logo outer component
+
+.logo {
+  width: 60px;
+  height: 60px;
+
+  @media (max-width: 1024px) {
+    width: 50px;
+    height: 50px;
+  }
+}
+
+// Menu Button outer component
+
+.menuButton {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  row-gap: calc(100% / 7);
+  position: absolute;
+  top: 0;
+  left: 10px;
+  width: 40px;
+  height: 40px;
+  border-radius: 5px;
+  background-color: var(--green-text-light);
+  padding: 10px 0;
+  border: none;
+
+  @media (max-width: 768px) {
+    display: flex;
+  }
+
+  span {
+    height: 2px;
+    border-radius: 2px;
+    width: 50%;
+    background-color: black;
+  }
+}
